@@ -1,0 +1,13 @@
+﻿@page "/my-component"
+
+@inject IJSRuntime JsRuntime
+
+<h1>Hello, world!</h1>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Add a custom stylesheet to the head of the document
+        await JsRuntime.InvokeVoidAsync("addStylesheetToHead", "/path/to/custom.css");
+    }
+}
